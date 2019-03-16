@@ -111,5 +111,16 @@ namespace EquazioniLibrary.Test
 
             Assert.AreEqual(risposta_attesa, risposta);
         }
+
+        [TestMethod]
+        public void EquationDegree()
+        {
+            double a = 2, b = 6;
+            string risposta_attesa = "3";
+
+            string risposta = EquazioniLibrary.Equazioni.EquationDegree1(a, b);
+
+            Assert.AreEqual(risposta_attesa, risposta);
+        }
     }
 }
