@@ -92,11 +92,22 @@ namespace EquazioniLibrary.Test
         [DataTestMethod]
         [DataRow(0, 0, 5)]
         [DataRow(0, 5, 0)]
-        public void IsDegree2Test3(double a, double b, double c)
+        public void IsDegree2Test2(double a, double b, double c)
         {
             bool risposta_attesa = false;
 
             bool risposta = EquazioniLibrary.Equazioni.IsDegree2(a, b, c);
+
+            Assert.AreEqual(risposta_attesa, risposta);
+        }
+
+        [TestMethod]
+        public void DeltaTest()
+        {
+            double a = 1, b = -5, c = 4;
+            double risposta_attesa = 9;
+
+            double risposta = EquazioniLibrary.Equazioni.Delta(a, b, c);
 
             Assert.AreEqual(risposta_attesa, risposta);
         }
