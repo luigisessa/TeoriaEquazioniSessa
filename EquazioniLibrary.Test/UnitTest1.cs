@@ -51,5 +51,28 @@ namespace EquazioniLibrary.Test
 
             Assert.AreEqual(risposta_attesa, risposta);
         }
+
+        [TestMethod]
+        public void IsIndeterminedTest()
+        {
+            double a = 0, b = 0;
+            bool risposta_attesa = true;
+
+            bool risposta = EquazioniLibrary.Equazioni.IsIndetermined(a, b);
+
+            Assert.AreEqual(risposta_attesa, risposta);
+        }
+
+        [DataTestMethod]
+        [DataRow(11, 0)]
+        [DataRow(0, 11)]
+        public void IsIndeterminedTest2(double a, double b)
+        {
+            bool risposta_attesa = false;
+
+            bool risposta = EquazioniLibrary.Equazioni.IsIndetermined(a, b);
+
+            Assert.AreEqual(risposta_attesa, risposta);
+        }
     }
 }
