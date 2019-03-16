@@ -74,5 +74,31 @@ namespace EquazioniLibrary.Test
 
             Assert.AreEqual(risposta_attesa, risposta);
         }
+
+        [DataTestMethod]
+        [DataRow(5, 0, -5)]
+        [DataRow(5, -5, 0)]
+        [DataRow(-5, 0, 5)]
+        [DataRow(-5, 5, 0)]
+        public void IsDegree2Test(double a, double b, double c)
+        {
+            bool risposta_attesa = true;
+
+            bool risposta = EquazioniLibrary.Equazioni.IsDegree2(a, b, c);
+
+            Assert.AreEqual(risposta_attesa, risposta);
+        }
+
+        [DataTestMethod]
+        [DataRow(0, 0, 5)]
+        [DataRow(0, 5, 0)]
+        public void IsDegree2Test3(double a, double b, double c)
+        {
+            bool risposta_attesa = false;
+
+            bool risposta = EquazioniLibrary.Equazioni.IsDegree2(a, b, c);
+
+            Assert.AreEqual(risposta_attesa, risposta);
+        }
     }
 }
